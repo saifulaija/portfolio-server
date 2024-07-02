@@ -4,6 +4,7 @@ import { BlogsRoutes } from '../modules/blog/blog.route';
 import { ProjectsRoutes } from '../modules/projects/projects.route';
 import { UserRoutes } from '../modules/user/user.route';
 import { SkillsRoutes } from '../modules/skills/skills.route';
+import { FrontendRoutes } from '../modules/frontent/frontend.route';
 
 const router = Router();
 
@@ -27,6 +28,10 @@ const moduleRoutes = [
   {
     path: '/skill',
     route: SkillsRoutes,
+  },
+  {
+    path: '/frontend-skill',
+    route: FrontendRoutes,
   },
 ];
 

@@ -1,7 +1,8 @@
 import { Schema, model } from 'mongoose';
-import { TAuth } from './auth.interface';
+import { TLoginUser } from './auth.interface';
 
-const authSchema = new Schema<TAuth>({
+
+const authSchema = new Schema<TLoginUser>({
   email: {
     type: String,
   },
@@ -15,4 +16,4 @@ const authSchema = new Schema<TAuth>({
 //   next();
 // });
 
-export const Auth = model<TAuth>('AuthModel', authSchema);
+export const Auth = model<TLoginUser>('AuthModel', authSchema);

@@ -5,6 +5,8 @@ import { ProjectsRoutes } from '../modules/projects/projects.route';
 import { UserRoutes } from '../modules/user/user.route';
 import { SkillsRoutes } from '../modules/skills/skills.route';
 import { FrontendRoutes } from '../modules/frontent/frontend.route';
+import { BackendRoutes } from '../modules/backend/backend.route';
+import { ToolsRoutes } from '../modules/tools/tools.route';
 
 const router = Router();
 
@@ -30,8 +32,16 @@ const moduleRoutes = [
     route: SkillsRoutes,
   },
   {
-    path: '/frontend-skill',
+    path: '/frontend',
     route: FrontendRoutes,
+  },
+  {
+    path: '/backend',
+    route: BackendRoutes,
+  },
+  {
+    path: '/tool',
+    route: ToolsRoutes,
   },
 ];
 

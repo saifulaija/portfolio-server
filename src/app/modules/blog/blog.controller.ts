@@ -59,6 +59,19 @@ const updateBlog = catchAsync(async (req, res) => {
     data: result,
   });
 });
+const voteCount = catchAsync(async (req, res) => {
+  const { id } = req.params;
+  const { action } = req.body;
+  
+  const result = await BlogServices.countVote(id,action);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'voting updated successfully',
+    data: result,
+  });
+});
 
 
 export const BlogControllers = {
@@ -66,5 +79,6 @@ export const BlogControllers = {
   getAllBlogs,
   getSingleBlog,
   deleteBlog,
-  updateBlog
+  updateBlog,
+  voteCount
 };

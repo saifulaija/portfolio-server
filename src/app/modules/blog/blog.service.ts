@@ -47,7 +47,22 @@ const updateBlog = async (id: string, payload: Partial<TBlog>) => {
   return result;
 };
 
+const countVote=async(id:any,action:string)=>{
+  console.log(id,action)
+  const blog = await Blog.findById(id);
+  if (!blog) {
+    throw new Error('Blog not found');
+  }
 
+  if (action === 'upvote') {
+    blog.votes += 1;
+  } else if (action === 'downvote') {
+    blog.votes -= 1;
+  }
+
+  await blog.save();
+  return blog.votes;
+}
 
 export const BlogServices = {
   createBlogIntoDB,
@@ -55,4 +70,5 @@ export const BlogServices = {
   getSingleBlog,
   deleteBlog,
   updateBlog,
+  countVote
 };

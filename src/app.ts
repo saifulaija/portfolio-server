@@ -14,13 +14,14 @@ const app: Application = express();
 app.use(express.json());
 app.use(cookieParser());
 
+// app.use(cors({origin:'http://localhost:3000',credentials:true}))
 app.use(cors({origin:'http://localhost:3000',credentials:true}))
 
 // application routes
 app.use('/api', router);
 
 app.get('/', (req: Request, res: Response) => {
-  res.send(' Trendy Leather DB Connected !!');
+  res.send('Portfolio DB Connected !!');
 });
 
 app.use(globalErrorHandler);

@@ -7,6 +7,7 @@ export interface TBlog {
   category: string;
   conclusion: string;
   image: string;
+  votes: number;
   author: Types.ObjectId
 }
 

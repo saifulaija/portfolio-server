@@ -18,6 +18,10 @@ const blogSchema = new Schema<TBlog>(
     conclusion: {
       type: String,
     },
+    votes: {
+      type: Number,
+      default: 0,
+    },
     author:{
       type:Schema.Types.ObjectId,
       ref:'User',

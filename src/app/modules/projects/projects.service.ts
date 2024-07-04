@@ -16,9 +16,22 @@ const getSingleProject = async (id: string) => {
   const result = await Projects.findById(id);
   return result;
 };
+const deleteProject = async (id: string) => {
+  const result = await Projects.findByIdAndDelete(id);
+  return result;
+};
+const updateProject=async(id:string,payload:Partial<TProject>)=>{
+    const result =await Projects.findByIdAndUpdate(id,payload,{
+        new:true,
+        runValidators:true
+    })
+    return result
+}
 
 export const ProjectsServices = {
   createProjectIntoDB,
   getAllProjects,
   getSingleProject,
+  deleteProject,
+  updateProject
 };

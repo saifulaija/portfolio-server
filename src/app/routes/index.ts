@@ -7,6 +7,7 @@ import { SkillsRoutes } from '../modules/skills/skills.route';
 import { FrontendRoutes } from '../modules/frontent/frontend.route';
 import { BackendRoutes } from '../modules/backend/backend.route';
 import { ToolsRoutes } from '../modules/tools/tools.route';
+import { MetaRoutes } from '../modules/meta/meta.route';
 
 const router = Router();
 
@@ -42,6 +43,10 @@ const moduleRoutes = [
   {
     path: '/tool',
     route: ToolsRoutes,
+  },
+  {
+    path: '/meta',
+    route: MetaRoutes,
   },
 ];
 
